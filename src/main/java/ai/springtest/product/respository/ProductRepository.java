@@ -3,7 +3,9 @@ package ai.springtest.product.respository;
 import ai.springtest.product.domain.Product;
 import java.util.HashMap;
 import java.util.Map;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class ProductRepository {
 
     private final Map<Long, Product> persistence = new HashMap<>();

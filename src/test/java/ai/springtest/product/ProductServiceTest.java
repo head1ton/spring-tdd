@@ -2,26 +2,17 @@ package ai.springtest.product;
 
 import ai.springtest.product.dto.AddProductRequest;
 import ai.springtest.product.enums.DiscountPolicy;
-import ai.springtest.product.respository.ProductRepository;
-import ai.springtest.product.service.ProductAdapter;
-import ai.springtest.product.service.ProductPort;
 import ai.springtest.product.service.ProductService;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
+@SpringBootTest
 public class ProductServiceTest {
 
+    @Autowired
     private ProductService productService;
-    private ProductPort productPort;
-    private ProductRepository productRepository;
-
-    @BeforeEach
-    void setUp() {
-        productRepository = new ProductRepository();
-        productPort = new ProductAdapter(productRepository);
-        productService = new ProductService(productPort);
-    }
 
     private static AddProductRequest 상품등록요청_생성() {
         String name = "상품명";
