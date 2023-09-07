@@ -30,8 +30,19 @@ public class ProductServiceTest {
         productService.addProduct(request);
     }
 
-    private record AddProductRequest(String name, int price, DiscountPolicy discountPolicy) {
-        private AddProductRequest {
+    public enum DiscountPolicy {
+        NONE
+
+    }
+
+    public interface ProductPort {
+
+        void save(final Product product);
+    }
+
+    public record AddProductRequest(String name, int price, DiscountPolicy discountPolicy) {
+
+        public AddProductRequest {
             Assert.hasText(name, "상품명은 필수입니다.");
             Assert.isTrue(price > 0, "상품 가격은 0보다 커야 합니다.");
             Assert.notNull(discountPolicy, "할인 정책은 필수입니다.");
@@ -39,12 +50,7 @@ public class ProductServiceTest {
 
     }
 
-    private enum DiscountPolicy {
-        NONE
-
-    }
-
-    private class ProductService {
+    public class ProductService {
 
         private final ProductPort productPort;
 
@@ -60,7 +66,7 @@ public class ProductServiceTest {
         }
     }
 
-    private class Product {
+    public class Product {
 
         @Getter
         private Long id;
@@ -82,12 +88,7 @@ public class ProductServiceTest {
         }
     }
 
-    private interface ProductPort {
-
-        void save(final Product product);
-    }
-
-    private class ProductAdapter implements ProductPort {
+    public class ProductAdapter implements ProductPort {
 
         private final ProductRepository productRepository;
 
@@ -101,7 +102,7 @@ public class ProductServiceTest {
         }
     }
 
-    private class ProductRepository {
+    public class ProductRepository {
 
         private Long sequence = 0L;
         private final Map<Long, Product> persistence = new HashMap<>();
