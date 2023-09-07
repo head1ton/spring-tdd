@@ -37,5 +37,9 @@ public class ProductServiceTest {
 
     private class ProductService {
 
+        public void addProduct(final AddProductRequest request) {
+            Product product = new Product(request.name(), request.price(),
+                request.discountPolicy());
+        }
     }
 }
