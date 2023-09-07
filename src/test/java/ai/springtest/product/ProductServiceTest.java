@@ -64,10 +64,8 @@ public class ProductServiceTest {
         }
     }
 
-    private class ProductPort {
+    private interface ProductPort {
 
-        public void save(final Product product) {
-            throw new UnsupportedOperationException("Unsupported save");
-        }
+        void save(final Product product);
     }
 }
