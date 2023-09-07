@@ -41,7 +41,7 @@ public class ProductServiceTest {
             Product product = new Product(request.name(), request.price(),
                 request.discountPolicy());
 
-
+            productPort.save(product);
         }
     }
 
