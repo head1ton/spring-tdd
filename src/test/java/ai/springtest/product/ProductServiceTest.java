@@ -9,7 +9,6 @@ public class ProductServiceTest {
 
     private ProductService productService;
     private ProductPort productPort;
-    private ProductRepository productRepository;
 
     @BeforeEach
     void setUp() {
@@ -79,6 +78,8 @@ public class ProductServiceTest {
 
     private class ProductAdapter implements ProductPort {
 
+        private ProductRepository productRepository;
+
         @Override
         public void save(final Product product) {
             productRepository.save(product);
@@ -87,5 +88,8 @@ public class ProductServiceTest {
 
     private class ProductRepository {
 
+        public void save(final Product product) {
+            throw new UnsupportedOperationException("Unsupported save");
+        }
     }
 }
