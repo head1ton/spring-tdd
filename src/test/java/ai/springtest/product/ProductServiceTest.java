@@ -1,5 +1,6 @@
 package ai.springtest.product;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.util.Assert;
@@ -7,6 +8,18 @@ import org.springframework.util.Assert;
 public class ProductServiceTest {
 
     private ProductService productService;
+    private ProductPort productPort;
+
+    @BeforeEach
+    void setUp() {
+        productPort = new ProductPort() {
+            @Override
+            public void save(final Product product) {
+
+            }
+        };
+        productService = new ProductService(productPort);
+    }
 
     @Test
     @DisplayName("상품등록")
