@@ -1,5 +1,6 @@
-package ai.springtest.product.service;
+package ai.springtest.product.respository;
 
+import ai.springtest.product.domain.Product;
 import java.util.HashMap;
 import java.util.Map;
 

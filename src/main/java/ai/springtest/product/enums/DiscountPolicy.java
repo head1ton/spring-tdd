@@ -1,4 +1,4 @@
-package ai.springtest.product.service;
+package ai.springtest.product.enums;
 
 public enum DiscountPolicy {
     NONE

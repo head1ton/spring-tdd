@@ -1,8 +1,8 @@
 package ai.springtest.product;
 
-import ai.springtest.product.service.AddProductRequest;
-import ai.springtest.product.service.DiscountPolicy;
-import ai.springtest.product.service.ProductRepository;
+import ai.springtest.product.dto.AddProductRequest;
+import ai.springtest.product.enums.DiscountPolicy;
+import ai.springtest.product.respository.ProductRepository;
 import ai.springtest.product.service.ProductAdapter;
 import ai.springtest.product.service.ProductPort;
 import ai.springtest.product.service.ProductService;
