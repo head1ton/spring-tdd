@@ -1,5 +1,9 @@
 package ai.springtest.product;
 
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import java.util.HashMap;
+import java.util.Map;
+import lombok.Getter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -57,6 +61,8 @@ public class ProductServiceTest {
 
     private class Product {
 
+        @Getter
+        private Long id;
         private final String name;
         private final int price;
         private final DiscountPolicy discountPolicy;
@@ -68,6 +74,10 @@ public class ProductServiceTest {
             this.name = name;
             this.price = price;
             this.discountPolicy = discountPolicy;
+        }
+
+        public void assignId(final Long id) {
+            this.id = id;
         }
     }
 
@@ -87,6 +97,9 @@ public class ProductServiceTest {
     }
 
     private class ProductRepository {
+
+        private Long sequence = 0L;
+        private final Map<Long, Product> persistence = new HashMap<>();
 
         public void save(final Product product) {
             product.assignId(++sequence);
