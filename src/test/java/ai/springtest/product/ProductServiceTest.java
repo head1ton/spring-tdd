@@ -10,6 +10,8 @@ import org.springframework.util.Assert;
 
 public class ProductServiceTest {
 
+    private ProductService productService;
+
     @Test
     @DisplayName("상품등록")
     public void 상품등록() {
