@@ -1,6 +1,5 @@
 package ai.springtest.product;
 
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import java.util.HashMap;
 import java.util.Map;
 import lombok.Getter;
@@ -16,7 +15,7 @@ public class ProductServiceTest {
 
     @BeforeEach
     void setUp() {
-        productPort = new ProductAdapter();
+        productPort = new ProductAdapter(productRepository);
         productService = new ProductService(productPort);
     }
 
@@ -88,7 +87,11 @@ public class ProductServiceTest {
 
     private class ProductAdapter implements ProductPort {
 
-        private ProductRepository productRepository;
+        private final ProductRepository productRepository;
+
+        private ProductAdapter(final ProductRepository productRepository) {
+            this.productRepository = productRepository;
+        }
 
         @Override
         public void save(final Product product) {
