@@ -13,6 +13,6 @@ public class ProductServiceTest {
     @Test
     @DisplayName("상품등록")
     public void 상품등록() {
-
+        productService.addProduct(request);
     }
 }
