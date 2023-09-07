@@ -89,7 +89,8 @@ public class ProductServiceTest {
     private class ProductRepository {
 
         public void save(final Product product) {
-            throw new UnsupportedOperationException("Unsupported save");
+            product.assignId(++sequence);
+            persistence.put(product.getId(), product);
         }
     }
 }
