@@ -12,12 +12,7 @@ public class ProductServiceTest {
 
     @BeforeEach
     void setUp() {
-        productPort = new ProductPort() {
-            @Override
-            public void save(final Product product) {
-
-            }
-        };
+        productPort = new ProductAdapter();
         productService = new ProductService(productPort);
     }
 
@@ -79,5 +74,13 @@ public class ProductServiceTest {
     private interface ProductPort {
 
         void save(final Product product);
+    }
+
+    private class ProductAdapter implements ProductPort {
+
+        @Override
+        public void save(final Product product) {
+
+        }
     }
 }
