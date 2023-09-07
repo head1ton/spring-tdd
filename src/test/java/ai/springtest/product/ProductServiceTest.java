@@ -13,7 +13,18 @@ public class ProductServiceTest {
     @Test
     @DisplayName("상품등록")
     public void 상품등록() {
-        final AddProductRequest request = new AddProductRequest("상품명", 1000, DiscountPolicy.NONE);
+        String name = "상품명";
+        int price = 1000;
+        final AddProductRequest request = new AddProductRequest(name, price, DiscountPolicy.NONE);
         productService.addProduct(request);
+    }
+
+    private enum DiscountPolicy {
+        NONE
+
+    }
+
+    private class AddProductRequest {
+
     }
 }
