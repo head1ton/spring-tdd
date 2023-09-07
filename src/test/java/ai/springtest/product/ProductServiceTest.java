@@ -9,6 +9,7 @@ public class ProductServiceTest {
 
     private ProductService productService;
     private ProductPort productPort;
+    private ProductRepository productRepository;
 
     @BeforeEach
     void setUp() {
@@ -82,5 +83,9 @@ public class ProductServiceTest {
         public void save(final Product product) {
             productRepository.save(product);
         }
+    }
+
+    private class ProductRepository {
+
     }
 }
