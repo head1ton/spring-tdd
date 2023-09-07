@@ -16,6 +16,7 @@ public class ProductServiceTest {
 
     @BeforeEach
     void setUp() {
+        productRepository = new ProductRepository();
         productPort = new ProductAdapter(productRepository);
         productService = new ProductService(productPort);
     }
