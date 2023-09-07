@@ -80,7 +80,7 @@ public class ProductServiceTest {
 
         @Override
         public void save(final Product product) {
-
+            productRepository.save(product);
         }
     }
 }
