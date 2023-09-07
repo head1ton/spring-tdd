@@ -66,5 +66,8 @@ public class ProductServiceTest {
 
     private class ProductPort {
 
+        public void save(final Product product) {
+            throw new UnsupportedOperationException("Unsupported save");
+        }
     }
 }
