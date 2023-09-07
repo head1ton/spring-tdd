@@ -1,5 +1,11 @@
 package ai.springtest.product;
 
+import ai.springtest.product.dto.AddProductRequest;
+import ai.springtest.product.enums.DiscountPolicy;
+import ai.springtest.product.repository.ProductRepository;
+import ai.springtest.product.service.ProductAdapter;
+import ai.springtest.product.service.ProductPort;
+import ai.springtest.product.service.ProductService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
