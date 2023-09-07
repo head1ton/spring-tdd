@@ -17,12 +17,18 @@ public class ProductServiceTest {
         productService = new ProductService(productPort);
     }
 
-    @Test
-    @DisplayName("상품등록")
-    public void 상품등록() {
+    private static AddProductRequest 상품등록요청_생성() {
         String name = "상품명";
         int price = 1000;
         final AddProductRequest request = new AddProductRequest(name, price, DiscountPolicy.NONE);
+        return request;
+    }
+
+    @Test
+    @DisplayName("상품등록")
+    public void 상품등록() {
+        final AddProductRequest request = 상품등록요청_생성();
+
         productService.addProduct(request);
     }
 
