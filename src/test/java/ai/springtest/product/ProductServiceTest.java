@@ -12,6 +12,7 @@ public class ProductServiceTest {
 
     private ProductService productService;
     private ProductPort productPort;
+    private ProductRepository productRepository;
 
     @BeforeEach
     void setUp() {
