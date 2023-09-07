@@ -1,6 +1,5 @@
-package ai.springtest.product.dto;
+package ai.springtest.product.service;
 
-import ai.springtest.product.enums.DiscountPolicy;
 import org.springframework.util.Assert;
 
 public record AddProductRequest(String name, int price, DiscountPolicy discountPolicy) {

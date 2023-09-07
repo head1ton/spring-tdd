@@ -1,6 +1,5 @@
-package ai.springtest.product.domain;
+package ai.springtest.product.service;
 
-import ai.springtest.product.enums.DiscountPolicy;
 import lombok.Getter;
 import org.springframework.util.Assert;
 

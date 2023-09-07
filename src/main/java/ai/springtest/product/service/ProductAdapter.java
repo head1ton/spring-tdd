@@ -1,8 +1,5 @@
 package ai.springtest.product.service;
 
-import ai.springtest.product.domain.Product;
-import ai.springtest.product.repository.ProductRepository;
-
 public class ProductAdapter implements ProductPort {
 
     private final ProductRepository productRepository;

@@ -1,8 +1,5 @@
 package ai.springtest.product.service;
 
-import ai.springtest.product.dto.AddProductRequest;
-import ai.springtest.product.domain.Product;
-
 public class ProductService {
 
     private final ProductPort productPort;
