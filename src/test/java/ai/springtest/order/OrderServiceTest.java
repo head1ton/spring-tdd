@@ -4,17 +4,13 @@ import static ai.springtest.order.OrderSteps.상품주문요청_생성;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import ai.springtest.ApiTest;
-import ai.springtest.order.controller.OrderService;
 import ai.springtest.order.dto.CreateOrderRequest;
 import ai.springtest.product.ProductSteps;
-import ai.springtest.product.controller.ProductService;
 import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 
