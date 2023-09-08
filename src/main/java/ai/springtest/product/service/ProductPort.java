@@ -5,4 +5,6 @@ import ai.springtest.product.domain.Product;
 public interface ProductPort {
 
     void save(final Product product);
+
+    Product getProduct(Long productId);
 }
