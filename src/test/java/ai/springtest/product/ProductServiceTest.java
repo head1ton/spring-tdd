@@ -5,10 +5,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 import ai.springtest.product.service.ProductService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
+@SpringBootTest
 public class ProductServiceTest {
 
-
+    @Autowired
     private ProductService productService;
 
     @Test
@@ -19,9 +22,9 @@ public class ProductServiceTest {
         final Long productId = 1L;
 
         // 조회
+        final GetProductResponse response = productService.getProduct(productId);
 
         // 검증
-        final GetProductResponse response = productService.getProduct(productId);
         assertThat(response).isNotNull();
     }
 
