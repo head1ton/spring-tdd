@@ -1,5 +1,7 @@
 package ai.springtest.product;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -14,6 +16,6 @@ public class ProductServiceTest {
         // 조회
 
         // 검증
-
+        assertThat(response).isNotNull();
     }
 }
