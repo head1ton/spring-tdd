@@ -4,7 +4,13 @@ import ai.springtest.order.domain.Order;
 import ai.springtest.payment.domain.Payment;
 import ai.springtest.payment.dto.PaymentRequest;
 import ai.springtest.payment.service.PaymentPort;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+@Component
 public class PaymentService {
 
     private final PaymentPort paymentPort;
