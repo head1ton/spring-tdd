@@ -1,7 +1,7 @@
 package ai.springtest.product.controller;
 
-import ai.springtest.product.GetProductResponse;
-import ai.springtest.product.UpdateProductRequest;
+import ai.springtest.product.dto.GetProductResponse;
+import ai.springtest.product.dto.UpdateProductRequest;
 import ai.springtest.product.dto.AddProductRequest;
 import ai.springtest.product.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
