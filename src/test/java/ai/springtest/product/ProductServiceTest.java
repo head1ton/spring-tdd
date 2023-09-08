@@ -12,11 +12,16 @@ public class ProductServiceTest {
     @DisplayName("상품조회")
     public void 상품조회() {
         // 등록
+        final Long productId = 1L;
 
         // 조회
 
         // 검증
         final GetProductResponse response = productService.getProduct(productId);
         assertThat(response).isNotNull();
+    }
+
+    private class GetProductResponse {
+
     }
 }
