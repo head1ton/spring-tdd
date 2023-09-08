@@ -16,6 +16,7 @@ public class ProductServiceTest {
         // 조회
 
         // 검증
+        final GetProductResponse response = productService.getProduct(productId);
         assertThat(response).isNotNull();
     }
 }
