@@ -5,7 +5,9 @@ import ai.springtest.payment.domain.Payment;
 import ai.springtest.payment.repository.PaymentRepository;
 import ai.springtest.product.domain.Product;
 import ai.springtest.product.enums.DiscountPolicy;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PaymentAdapter implements PaymentPort {
 
     private final PaymentGateway paymentGateway;

@@ -3,7 +3,9 @@ package ai.springtest.payment.repository;
 import ai.springtest.payment.domain.Payment;
 import java.util.HashMap;
 import java.util.Map;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class PaymentRepository {
 
     private final Map<Long, Payment> persistence = new HashMap<>();
