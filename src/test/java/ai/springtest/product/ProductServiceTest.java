@@ -2,7 +2,6 @@ package ai.springtest.product;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import ai.springtest.product.enums.DiscountPolicy;
 import ai.springtest.product.service.ProductPort;
 import ai.springtest.product.service.ProductService;
 import org.junit.jupiter.api.DisplayName;
@@ -25,8 +24,7 @@ public class ProductServiceTest {
         productService.addProduct(ProductSteps.상품등록요청_생성());
 
         final Long productId = 1L;
-        final UpdateProductRequest request = new UpdateProductRequest("상품 수정", 2000,
-            DiscountPolicy.NONE);
+        final var request = ProductSteps.상품수정요청();
 
         productService.updateProduct(productId, request);
 
@@ -36,4 +34,5 @@ public class ProductServiceTest {
         assertThat(response.name()).isEqualTo("상품 수정");
         assertThat(response.price()).isEqualTo(2000);
     }
+
 }
