@@ -17,7 +17,7 @@ public class ProductServiceTest {
     @DisplayName("상품조회")
     public void 상품조회() {
         // 등록
-        productService.addProduct();
+        productService.addProduct(ProductSteps.상품등록요청_생성());
         final Long productId = 1L;
 
         // 조회
