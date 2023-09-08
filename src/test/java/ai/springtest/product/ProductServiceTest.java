@@ -1,11 +1,32 @@
 package ai.springtest.product;
 
+import ai.springtest.product.domain.Product;
 import ai.springtest.product.enums.DiscountPolicy;
+import ai.springtest.product.service.ProductPort;
+import ai.springtest.product.service.ProductService;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.util.Assert;
 
 public class ProductServiceTest {
+
+    private ProductService productService;
+
+    @BeforeEach
+    void setUp() {
+        final ProductPort productPort = new ProductPort() {
+            @Override
+            public void save(final Product product) {
+
+            }
+
+            @Override
+            public Product getProduct(final Long productId) {
+                return null;
+            }
+        };
+        productService = new ProductService(productPort);
+    }
 
     @Test
     @DisplayName("상품수정")
@@ -16,12 +37,4 @@ public class ProductServiceTest {
         productService.updateProduct(productId, request);
     }
 
-    private record UpdateProductRequest(String name, int price, DiscountPolicy discountPolicy) {
-
-        private UpdateProductRequest {
-            Assert.hasText(name, "상품명은 필수입니다.");
-            Assert.isTrue(price > 0, "상품 가격은 0보다 커야 합니다.");
-            Assert.notNull(discountPolicy, "할인 정책은 필수입니다.");
-        }
-    }
 }
