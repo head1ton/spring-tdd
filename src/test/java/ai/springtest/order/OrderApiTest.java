@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 
 
-class OrderApiTest extends ApiTest {
+public class OrderApiTest extends ApiTest {
 
     @Test
     @DisplayName("상품주문")
