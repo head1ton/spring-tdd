@@ -2,6 +2,7 @@ package ai.springtest.payment;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.util.Assert;
 
 public class PaymentServiceTest {
 
@@ -15,10 +16,16 @@ public class PaymentServiceTest {
         paymentService.payment(request);
     }
 
-    private class PaymentRequest {
+    private static class PaymentRequest {
+
+        private final Long orderId;
+        private final String cardNumber;
 
         public PaymentRequest(final Long orderId, final String cardNumber) {
-
+            Assert.notNull(orderId, "주문 ID는 필수입니다.");
+            Assert.hasText(cardNumber, "카드 정보는 필수입니다.");
+            this.orderId = orderId;
+            this.cardNumber = cardNumber;
         }
     }
 }
