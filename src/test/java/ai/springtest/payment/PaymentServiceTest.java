@@ -1,7 +1,9 @@
 package ai.springtest.payment;
 
+import ai.springtest.order.domain.Order;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.aop.config.SimpleBeanFactoryAwareAspectInstanceFactory;
 import org.springframework.util.Assert;
 
 public class PaymentServiceTest {
@@ -26,10 +28,17 @@ public class PaymentServiceTest {
         }
     }
 
+    private interface PaymentPort {
+
+    }
+
     private class PaymentService {
 
+        private PaymentPort paymentPort;
+
         public void payment(final PaymentRequest request) {
-            throw new UnsupportedOperationException("Unsupported payment");
+            // payment 정보 가져와서 먼저 확인
+            Order order = paymentPort.getOrder(request.orderId());
         }
     }
 }
