@@ -15,12 +15,12 @@ public class PaymentService {
 
     public void payment(final PaymentRequest request) {
         // payment 정보 가져와서 먼저 확인
-        Order order = paymentPort.getOrder(request.orderId());
+        final Order order = paymentPort.getOrder(request.orderId());
 
         // 지불정보
-        Payment payment = new Payment(order, request.cardNumber());
+        final Payment payment = new Payment(order, request.cardNumber());
 
-        paymentPort.pay(payment);
+        paymentPort.pay(payment.getPrice(), payment.getCardNumber());
         paymentPort.save(payment);
 
     }

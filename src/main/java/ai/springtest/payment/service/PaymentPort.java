@@ -7,7 +7,7 @@ public interface PaymentPort {
 
     Order getOrder(Long id);
 
-    void pay(Payment payment);
-
     void save(Payment payment);
+
+    void pay(int price, String cardNumber);
 }

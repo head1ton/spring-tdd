@@ -23,12 +23,12 @@ public class PaymentAdapter implements PaymentPort {
     }
 
     @Override
-    public void pay(final Payment payment) {
-        paymentGateway.execute(payment);    // pg 사 결제 모듈 연동으로 가정
+    public void save(final Payment payment) {
+        paymentRepository.save(payment);
     }
 
     @Override
-    public void save(final Payment payment) {
-        paymentRepository.save(payment);
+    public void pay(final int price, final String cardNumber) {
+        paymentGateway.execute(price, cardNumber);      // pg 사 결제 모듈 연동으로 가정
     }
 }

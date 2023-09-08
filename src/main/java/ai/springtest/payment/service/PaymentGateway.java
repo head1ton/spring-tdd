@@ -5,5 +5,5 @@ import ai.springtest.payment.domain.Payment;
 
 public interface PaymentGateway {
 
-    void execute(Payment payment);
+    void execute(int price, String cardNumber);
 }

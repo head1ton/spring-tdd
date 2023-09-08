@@ -4,11 +4,11 @@ import ai.springtest.order.domain.Order;
 import lombok.Getter;
 import org.springframework.util.Assert;
 
+@Getter
 public class Payment {
 
     private final Order order;
     private final String cardNumber;
-    @Getter
     private Long id;
 
     public Payment(final Order order, final String cardNumber) {
@@ -21,4 +21,9 @@ public class Payment {
     public void assignId(final Long id) {
         this.id = id;
     }
+
+    public int getPrice() {
+        return order.getTotalPrice();
+    }
+
 }
