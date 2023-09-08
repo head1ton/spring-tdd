@@ -33,7 +33,6 @@ public class ProductServiceTest {
         final Long productId = 1L;
         final UpdateProductRequest request = new UpdateProductRequest("상품 수정", 2000,
             DiscountPolicy.NONE);
-        Product product = new Product("상품명", 1000, DiscountPolicy.NONE);
 
         productService.updateProduct(productId, request);
 
