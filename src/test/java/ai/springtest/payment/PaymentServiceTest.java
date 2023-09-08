@@ -6,6 +6,8 @@ import org.springframework.util.Assert;
 
 public class PaymentServiceTest {
 
+    private PaymentService paymentService;
+
     @Test
     @DisplayName("상품주문")
     public void 상품주문() {
@@ -21,6 +23,13 @@ public class PaymentServiceTest {
         private PaymentRequest {
             Assert.notNull(orderId, "주문 ID는 필수입니다.");
             Assert.hasText(cardNumber, "카드 정보는 필수입니다.");
+        }
+    }
+
+    private class PaymentService {
+
+        public void payment(final PaymentRequest request) {
+            throw new UnsupportedOperationException("Unsupported payment");
         }
     }
 }
