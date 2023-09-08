@@ -16,16 +16,11 @@ public class PaymentServiceTest {
         paymentService.payment(request);
     }
 
-    private static class PaymentRequest {
+    private record PaymentRequest(Long orderId, String cardNumber) {
 
-        private final Long orderId;
-        private final String cardNumber;
-
-        public PaymentRequest(final Long orderId, final String cardNumber) {
+        private PaymentRequest {
             Assert.notNull(orderId, "주문 ID는 필수입니다.");
             Assert.hasText(cardNumber, "카드 정보는 필수입니다.");
-            this.orderId = orderId;
-            this.cardNumber = cardNumber;
         }
     }
 }
