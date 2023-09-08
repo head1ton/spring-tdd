@@ -31,11 +31,12 @@ public class ProductApiTest extends ApiTest {
 
         ExtractableResponse<Response> response = RestAssured.given().log().all()
                                                             .when()
-                                                            .get("/products/{productId}")
+                                                            .get("/products/{productId}", productId)
                                                             .then().log().all()
                                                             .extract();
 
         assertThat(response.statusCode()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.jsonPath().getString("name")).isEqualTo("상품명");
     }
 
 }
