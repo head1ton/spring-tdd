@@ -3,6 +3,7 @@ package ai.springtest.product;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import ai.springtest.product.enums.DiscountPolicy;
+import ai.springtest.product.service.ProductService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.util.Assert;
@@ -10,10 +11,13 @@ import org.springframework.util.Assert;
 public class ProductServiceTest {
 
 
+    private ProductService productService;
+
     @Test
     @DisplayName("상품조회")
     public void 상품조회() {
         // 등록
+        productService.addProduct();
         final Long productId = 1L;
 
         // 조회
