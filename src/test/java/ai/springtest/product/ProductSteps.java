@@ -1,6 +1,7 @@
 package ai.springtest.product;
 
 import ai.springtest.product.dto.AddProductRequest;
+import ai.springtest.product.dto.UpdateProductRequest;
 import ai.springtest.product.enums.DiscountPolicy;
 import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;

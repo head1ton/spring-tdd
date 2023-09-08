@@ -1,10 +1,9 @@
 package ai.springtest.product.service;
 
-import ai.springtest.product.GetProductResponse;
-import ai.springtest.product.UpdateProductRequest;
+import ai.springtest.product.dto.GetProductResponse;
+import ai.springtest.product.dto.UpdateProductRequest;
 import ai.springtest.product.domain.Product;
 import ai.springtest.product.dto.AddProductRequest;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

@@ -1,4 +1,4 @@
-package ai.springtest.product;
+package ai.springtest.product.dto;
 
 import ai.springtest.product.enums.DiscountPolicy;
 import org.springframework.util.Assert;
