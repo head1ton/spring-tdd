@@ -16,11 +16,13 @@ public class PaymentServiceTest {
 
     private PaymentService paymentService;
     private PaymentPort paymentPort;
+    private PaymentGateway paymentGateway;
+    private PaymentRepository paymentRepository;
 
     @BeforeEach
     void setUp() {
-        final PaymentGateway paymentGateway = new ConsolePaymentGateway();
-        final PaymentRepository paymentRepository = new PaymentRepository();
+        paymentGateway = new ConsolePaymentGateway();
+        paymentRepository = new PaymentRepository();
         paymentPort = new PaymentAdapter(paymentGateway, paymentRepository);
         paymentService = new PaymentService(paymentPort);
     }
