@@ -1,5 +1,6 @@
 package ai.springtest.product.service;
 
+import ai.springtest.product.GetProductResponse;
 import ai.springtest.product.domain.Product;
 import ai.springtest.product.dto.AddProductRequest;
 import org.springframework.stereotype.Component;
@@ -21,5 +22,9 @@ public class ProductService {
             request.discountPolicy());
 
         productPort.save(product);
+    }
+
+    public GetProductResponse getProduct(final Long productId) {
+        final Product product = productPort.getProduct(productId);
     }
 }
