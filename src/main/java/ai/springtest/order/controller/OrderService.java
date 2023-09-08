@@ -4,7 +4,9 @@ import ai.springtest.order.dto.CreateOrderRequest;
 import ai.springtest.order.service.OrderPort;
 import ai.springtest.order.domain.Order;
 import ai.springtest.product.domain.Product;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderService {
 
     private final OrderPort orderPort;

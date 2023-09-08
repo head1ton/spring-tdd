@@ -4,7 +4,9 @@ import ai.springtest.order.domain.Order;
 import ai.springtest.order.respository.OrderRepository;
 import ai.springtest.product.domain.Product;
 import ai.springtest.product.respository.ProductRepository;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderAdapter implements OrderPort {
 
     private final ProductRepository productRepository;

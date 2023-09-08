@@ -1,38 +1,17 @@
 package ai.springtest.order;
 
 import ai.springtest.order.controller.OrderService;
-import ai.springtest.order.domain.Order;
 import ai.springtest.order.dto.CreateOrderRequest;
-import ai.springtest.order.respository.OrderRepository;
-import ai.springtest.order.service.OrderPort;
-import ai.springtest.product.domain.Product;
-import ai.springtest.product.enums.DiscountPolicy;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
+@SpringBootTest
 public class OrderServiceTest {
 
+    @Autowired
     private OrderService orderService;
-    private OrderPort orderPort;
-    private OrderRepository orderRepository;
-
-    @BeforeEach
-    void setUp() {
-        orderRepository = new OrderRepository();
-        orderPort = new OrderPort() {
-            @Override
-            public Product getProductById(final Long productId) {
-                return new Product("상품명", 1000, DiscountPolicy.NONE);
-            }
-
-            @Override
-            public void save(final Order order) {
-                orderRepository.save(order);
-            }
-        };
-        orderService = new OrderService(orderPort);
-    }
 
     @Test
     @DisplayName("상품주문")
